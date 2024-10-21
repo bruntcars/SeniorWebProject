@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles2.css"> 
+    <title>Carson's Portfolio</title>
+</head>
+<body>
+
+    <nav>
+        <div class="logo">
+            <img src="your-logo2.png" alt="Logo" />
+            <span>Carson Brunt</span>
+        </div>
+        <div class="nav-links">
+            <a href="#">Home</a>
+            <a href="#resume">Resume</a>
+            <a href="#portfolio">Gallery</a>
+        </div>
+    </nav>
+
+    <div class="parallax"></div>
+
+    <div class="container about-section">
+        <h2>About This Site</h2>
+        <p>Welcome to my portfolio, where you'll find my resume and a collection of my work from the Computer Information Technology (CITS) program. As a senior at Elms College, I'm excited to showcase my projects and experiences as I prepare to graduate this year. This site highlights my skills, accomplishments, and passion for technology, reflecting my journey and readiness to embark on the next chapter of my career. Thank you for visiting!</p>
+    </div>
+
+    <div class="parallax second"></div>
+
+    <div class="container" id="resume">
+        <h2>Resume</h2>
+        <iframe src="Resume.pdf" width="100%" height="500px"></iframe>
+    </div>
+
+    <div class="parallax third"></div>
+
+    <div class="container" id="portfolio">
+        <h2>Portfolio Projects</h2>
+        <div class="carousel">
+            <button class="prev" onclick="moveSlide(-1)">&#10094;</button>
+            <div class="carousel-images" id="carouselImages">
+                <img src="placeholder1.jpg" alt="Project 1">
+                <img src="placeholder2.jpg" alt="Project 2">
+                <img src="placeholder3.jpg" alt="Project 3">
+            </div>
+            <button class="next" onclick="moveSlide(1)">&#10095;</button>
+        </div>
+    </div>
+    
+    <footer>
+        <p>&copy; 2024 Carson Brunt. All Rights Reserved.</p>
+    </footer>
+
+    <script>
+        let currentIndex = 0;
+
+        function moveSlide(direction) {
+            const images = document.getElementById('carouselImages');
+            const totalImages = images.children.length;
+            currentIndex = (currentIndex + direction + totalImages) % totalImages;
+            images.style.transform = 'translateX(' + (-currentIndex * 100) + '%)';
+        }
+    </script>
+
+</body>
+</html>
